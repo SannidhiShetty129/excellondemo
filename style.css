@@ -1,73 +1,48 @@
-/* Basic reset and font */
+/* Reset and Font */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f8f8f8;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     color: #333;
 }
-
+.hamburger{
+    display: none;
+}
 /* Navigation */
 nav {
-    background-color: #f8f8f8;
+    
     padding: 20px;
-}
-
-.nav-content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: nowrap; /* Prevent wrapping by default */
-    justify-content: space-between;
 }
 
 .nav-left {
     display: flex;
     align-items: center;
-    font-size: 2rem; /* Adjust as needed */
+    font-size: 2rem;
 }
 
-.nav-left p { /* Style the star */
-    margin-right: 10px; /* Add some space after the star */
-}
-h1 p{
-    font-family:   sans-serif;
-}
-
-.hamburger {
-    display: none; /* Hidden on larger screens */
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 10px;
-    align-items: center; /* Vertically center items */
-}
-
-.hamburger a {
-    color: #333;
-    text-decoration: none;
-    margin: 0 10px; /* Space between En/Login */
+.nav-left p {
+    margin-right: 10px;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
-}
-
-.nav-right > div { /* Style direct children of nav-right */
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
+    gap: 15px;
 }
 
 .nav-right a {
-    color: #333;
     text-decoration: none;
-    margin: 0 10px;
+    color: #333;
     white-space: nowrap;
 }
 
@@ -77,13 +52,7 @@ h1 p{
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    margin-left: 15px;
     white-space: nowrap;
-}
-
-.try-demo span {
-    font-size: smaller;
-    margin-left: 5px;
 }
 
 /* Hero Section */
@@ -98,26 +67,19 @@ h1 p{
     margin-bottom: 20px;
 }
 
-.hero p {
-    margin-bottom: 10px;
-}
-
-
-/* Card Container */
-.card-container {
+/* Cards Section */
+.cards-wrapper {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .card {
     width: 300px;
     height: 200px;
     position: relative;
-    
     transition: transform 0.8s ease-in-out;
     transform-style: preserve-3d;
     perspective: 1000px;
@@ -138,7 +100,7 @@ h1 p{
 }
 
 .card-front {
-    background-image: url('img/organic.jpg'); /* Replace with your image URL */
+    background-image: url('img/organic.jpg');
     color: rgb(93, 59, 85);
     font-size: 24px;
     text-align: center;
@@ -146,17 +108,13 @@ h1 p{
 
 .card-back {
     background-color: #cefafd;
-    color: #333333;
+    color: #333;
     transform: rotateY(180deg);
     padding: 20px;
 }
 
-.card-container:hover .card {
+.card:hover {
     transform: rotateY(-180deg);
-}
-
-.card-back p {
-    margin-bottom: 10px;
 }
 
 /* Testimonial */
@@ -183,59 +141,29 @@ h1 p{
     border-radius: 50%;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
-    .nav-content {
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        justify-content: space-between; /* Maintain space between */
+    .hamburger{
+        display: inline-block;
     }
-
-    .nav-left {
-        order: 1; /* Logo first */
-        flex-basis: auto;
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger */
-        order: 2; /* Hamburger second */
-        flex-basis: auto;
+    nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .nav-right {
-        order: 3; /* Other nav items last */
-        flex-basis: 100%; /* Take full width */
-        justify-content: flex-end; /* Align to right */
-        margin-top: 10px; /* Add some top margin */
-    }
-
-    .nav-right > div, .nav-right a, .try-demo {
-        margin: 5px; /* Reduce margins for stacked elements */
-    }
-
-    .nav-right > div {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: flex-end; /* Align to the right */
-    }
-
-    .nav-middle {
-        display: none; /* Hide default nav */
-        flex-basis: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-content.active .nav-middle {
-        display: flex; /* Show when hamburger is active */
+        display: none;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .try-demo {
-        order: 4; /* Try Demo button last */
-        margin: 10px 0; /* Adjust margin */
-        flex-basis: 100%; /* Take full width */
-        text-align: center; /* Center text */
+        margin-top: 10px;
     }
 
-    .features {
+    .cards-wrapper {
         flex-direction: column;
+        align-items: center;
     }
 }
+
