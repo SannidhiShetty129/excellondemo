@@ -34,6 +34,9 @@ nav {
 .nav-left p { /* Style the star */
     margin-right: 10px; /* Add some space after the star */
 }
+h1 p{
+    font-family:   sans-serif;
+}
 
 .hamburger {
     display: none; /* Hidden on larger screens */
@@ -103,6 +106,7 @@ nav {
 /* Card Container */
 .card-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     gap: 20px;
     padding: 20px;
@@ -113,6 +117,7 @@ nav {
     width: 300px;
     height: 200px;
     position: relative;
+    
     transition: transform 0.8s ease-in-out;
     transform-style: preserve-3d;
     perspective: 1000px;
@@ -133,21 +138,21 @@ nav {
 }
 
 .card-front {
-    background-image: url('your-image.jpg'); /* Replace with your image URL */
-    color: white;
+    background-image: url('img/organic.jpg'); /* Replace with your image URL */
+    color: rgb(93, 59, 85);
     font-size: 24px;
     text-align: center;
 }
 
 .card-back {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #cefafd;
+    color: #333333;
     transform: rotateY(180deg);
     padding: 20px;
 }
 
 .card-container:hover .card {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
 
 .card-back p {
