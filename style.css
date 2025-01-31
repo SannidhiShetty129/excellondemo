@@ -1,0 +1,236 @@
+/* Basic reset and font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: nowrap; /* Prevent wrapping by default */
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    font-size: 2rem; /* Adjust as needed */
+}
+
+.nav-left p { /* Style the star */
+    margin-right: 10px; /* Add some space after the star */
+}
+
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    align-items: center; /* Vertically center items */
+}
+
+.hamburger a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px; /* Space between En/Login */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right > div { /* Style direct children of nav-right */
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.nav-right a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+.try-demo {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.try-demo span {
+    font-size: smaller;
+    margin-left: 5px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f8f8f8;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-bottom: 10px;
+}
+
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+.card-front {
+    background-image: url('your-image.jpg'); /* Replace with your image URL */
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.card-back {
+    background-color: #f0f0f0;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 20px;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card-back p {
+    margin-bottom: 10px;
+}
+
+/* Testimonial */
+.testimonial {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial p {
+    margin-bottom: 10px;
+}
+
+.testimonial-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.testimonial-images img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        justify-content: space-between; /* Maintain space between */
+    }
+
+    .nav-left {
+        order: 1; /* Logo first */
+        flex-basis: auto;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger */
+        order: 2; /* Hamburger second */
+        flex-basis: auto;
+    }
+
+    .nav-right {
+        order: 3; /* Other nav items last */
+        flex-basis: 100%; /* Take full width */
+        justify-content: flex-end; /* Align to right */
+        margin-top: 10px; /* Add some top margin */
+    }
+
+    .nav-right > div, .nav-right a, .try-demo {
+        margin: 5px; /* Reduce margins for stacked elements */
+    }
+
+    .nav-right > div {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-end; /* Align to the right */
+    }
+
+    .nav-middle {
+        display: none; /* Hide default nav */
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-content.active .nav-middle {
+        display: flex; /* Show when hamburger is active */
+    }
+
+    .try-demo {
+        order: 4; /* Try Demo button last */
+        margin: 10px 0; /* Adjust margin */
+        flex-basis: 100%; /* Take full width */
+        text-align: center; /* Center text */
+    }
+
+    .features {
+        flex-direction: column;
+    }
+}
