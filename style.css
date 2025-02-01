@@ -15,8 +15,8 @@ body {
     display: none;
 }
 /* Navigation */
+/* Navigation Bar */
 nav {
-    
     padding: 20px;
     display: flex;
     align-items: center;
@@ -25,28 +25,33 @@ nav {
     margin: 0 auto;
 }
 
+/* Left Section */
 .nav-left {
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    gap: 15px; /* Space between logo and email */
 }
 
-.nav-left p {
-    margin-right: 10px;
+/* Email Close to Logo */
+#email a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
 }
 
+/* Right Section */
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
-.nav-right a {
-    text-decoration: none;
-    color: #333;
-    white-space: nowrap;
+/* Move FAQ Closer to Try Now */
+#three {
+    margin-left: auto;
 }
 
+/* Try Now Button */
 .try-demo {
     background-color: #000;
     color: white;
@@ -55,6 +60,19 @@ nav {
     text-decoration: none;
     white-space: nowrap;
 }
+
+/* Hide Email & FAQ in Mobile View */
+@media (max-width: 768px) {
+    #email, #three {
+        display: none;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
 
 /* Hero Section */
 .hero {
