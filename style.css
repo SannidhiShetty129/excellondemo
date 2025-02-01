@@ -45,7 +45,10 @@ nav {
     align-items: center;
     gap: 20px;
 }
-
+a {
+    text-decoration: none;
+    color: black;
+}
 /* Move FAQ Closer to Try Now */
 #three {
     margin-left: auto;
